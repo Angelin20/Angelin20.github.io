@@ -1062,7 +1062,7 @@
     var email_btn = document.getElementById('SendEmail');
     email_btn.addEventListener("click",function(e){
         e.preventDefault();
-        location.href = "mailto:"+your_email+"?body="+emailBody+"&subject="+emailSub;
+        location.href = "mailto:"+your_email+"?body="+encodeURIComponent(emailBody)+"&subject="+encodeURIComponent(emailSub);
     });
   </script>
 	<!-- Javascript files -->
