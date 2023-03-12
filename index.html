@@ -1004,7 +1004,7 @@
           <div class="col-md-9">
             <div class="contact-form">
               <strong>Enviarme un mensaje</strong>
-              <form name="contact-form" method="post" action="https://mailto:angel_javierlb@hotmail.com" target="_top">
+              <form name="contact-form" method="post">
                 <div class="form-group">
                   <label for="InputName1">Nombre</label>
                   <input type="text" name="subject" class="form-control" id="InputName1" required="">
@@ -1014,7 +1014,7 @@
                   <textarea name="body" class="form-control" id="InputTextarea" rows="5" required=""></textarea>
                 </div>
 
-                <button type="submit" name="submit" class="btn btn-primary">Enviar mensaje</button>
+                <button type="button" id="SendEmail" class="btn btn-primary">Enviar mensaje</button>
               </form>
             </div>
           </div><!-- /.col-md-6 -->
@@ -1055,7 +1055,16 @@
 	<div class="scroll-up">
 		<a href="#home"><i class="fa fa-angle-up"></i></a>
 	</div>
-
+  <script>
+    your_email = "angel_javierlb@hotmail.com";
+    emailSub = document.getElementById("InputName1").value;
+    emailBody = document.getElementById("InputTextarea").innerText; 
+    var email_btn = document.getElementById('SendEmail');
+    email_btn.addEventListener("click",function(e){
+        e.preventDefault();
+        location.href = "mailto:"+your_email+'&subject='+emailSub+'&body='+emailBody;
+    });
+  </script>
 	<!-- Javascript files -->
 	<script src="assets/js/jquery.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.min.js"></script>
